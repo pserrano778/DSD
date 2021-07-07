@@ -1,0 +1,3 @@
+grant codeBase "file:./out/production/P3_Parte2" {
+    permission java.security.AllPermission;
+};

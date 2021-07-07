@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link rel="stylesheet" type="text/css" href="./sensores/css/estiloSensores.css">
+		<link rel="icon" type="image/x-icon" href="./icon/favicon.ico" />
+		<title>Sensores</title>
+	</head>
+	<script src="/socket.io/socket.io.js"></script>
+	<script src="./sensores/js/jsSensores.js"></script>
+
+	<header class="cabecera">
+		<h1 class="titulo">Sensores</h1>
+	</header>
+	<body class="cuerpo">
+		<div class="contenido">
+			<fieldset class="marco">
+				<legend>Modificar medidas</legend>
+				<form onsubmit="enviarTemperatura();return false;">
+					<label for="Temperatura">Nueva temperatura:</label><br>
+					<input type="number" id="temp" name="temp" value="" step="0.1" min="-30" max="70">
+					<input id="botonTemp" type="submit" value="Enviar">
+				</form>
+				<br>
+				<form onsubmit="enviarLuminosidad();return false;">
+					<label for="Luminosidad">Nueva luminosidad:</label><br>
+					<input type="number" id="luz" name="luz" value="" step="0.1" min="0" max="100"">
+					<input id="botonLuz" type="submit" value="Enviar">
+				</form>
+				<br><br>
+				<form onsubmit="timerDatos();return false;">
+					<input id="botonAuto" type="submit" value="Iniciar datos automaticos">
+				</form>
+			</fieldset>
+
+			<fieldset class="marco">
+				<legend>Estado de los actuadores</legend>
+				<p id="estadoAireAcondicionado"></p>
+				<p id="estadoPersiana"></p>
+			</fieldset>
+		</div>
+	</body>
+</html>
